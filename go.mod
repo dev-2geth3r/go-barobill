@@ -1,10 +1,10 @@
-module barobill
+module github.com/dev-2geth3r/go-barobill
 
 go 1.24
 
 require (
 	github.com/rushysloth/go-tsid v1.0.6
-	github.com/secr3t/req/v3 v3.50.4
+	github.com/secr3t/req/v3 v3.50.5
 )
 
 require (
@@ -15,9 +15,9 @@ require (
 	github.com/hashicorp/errwrap v1.1.0 // indirect
 	github.com/hashicorp/go-multierror v1.1.1 // indirect
 	github.com/klauspost/compress v1.18.0 // indirect
-	github.com/onsi/ginkgo/v2 v2.23.2 // indirect
+	github.com/onsi/ginkgo/v2 v2.23.3 // indirect
 	github.com/quic-go/qpack v0.5.1 // indirect
-	github.com/quic-go/quic-go v0.50.0 // indirect
+	github.com/quic-go/quic-go v0.50.1 // indirect
 	github.com/refraction-networking/utls v1.6.7 // indirect
 	go.uber.org/mock v0.5.0 // indirect
 	golang.org/x/crypto v0.36.0 // indirect
