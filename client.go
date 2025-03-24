@@ -46,6 +46,6 @@ func (c *Client) TestGateway() *Client {
 
 func (c *Client) ProductionGateway() *Client {
 	c.namespace = productionGateway
-	c.rc.SetBaseURL(productionGateway)
+	c.rc.SetBaseURL(productionGateway).DisableDumpAll()
 	return c
 }
