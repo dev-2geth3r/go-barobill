@@ -8,7 +8,6 @@ const (
 
 	contentTypeSoapXml = "application/soap+xml; charset=utf-8"
 
-	taxInvoiceEndpoint      = "TI.asmx"
 	corporateStatusEndpoint = "CORPSTATE.asmx"
 )
 
@@ -20,21 +19,27 @@ var (
 )
 
 type Client struct {
-	rc        *req.Client
-	namespace string
-	certKey   string
-	corpNum   string
+	rc               *req.Client
+	namespace        string
+	certKey          string
+	corpNum          string
+	barobillUsername string
 }
 
 // NewClient default baseURL is testGateway
 // @param certKey 바로빌 연동인증키
 // @param corpNum 바로빌 연동인증키에 맞는 사업자 번호
-func NewClient(certKey, corpNum string) *Client {
+func NewClient(certKey, corpNum string, barobillUsernameArgs ...string) *Client {
+	var barobillUsername string
+	if len(barobillUsernameArgs) == 1 {
+		barobillUsername = barobillUsernameArgs[0]
+	}
 	return &Client{
-		namespace: testGateway,
-		rc:        defaultClient.Clone(),
-		certKey:   certKey,
-		corpNum:   corpNum,
+		namespace:        testGateway,
+		rc:               defaultClient.Clone(),
+		certKey:          certKey,
+		corpNum:          corpNum,
+		barobillUsername: barobillUsername,
 	}
 }
 

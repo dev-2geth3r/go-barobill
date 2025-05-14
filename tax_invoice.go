@@ -10,6 +10,8 @@ import (
 const (
 	issueTaxInvoiceEx        = "IssueTaxInvoiceEx"
 	registAndIssueTaxInvoice = "RegistAndIssueTaxInvoice"
+
+	taxInvoiceEndpoint = "TI.asmx"
 )
 
 type RegistAndIssueTaxInvoice struct {
