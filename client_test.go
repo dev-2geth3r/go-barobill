@@ -5,12 +5,6 @@ import (
 	"testing"
 )
 
-func TestGetBankAccountLogs(t *testing.T) {
-	c := NewClient(os.Getenv(envCertKey), os.Getenv(envCorpNum), "secr3t").ProductionGateway()
-	res, err := c.GetPeriodBankAccountLogEx2(NewGetPeriodBankAccountLogEx2("54690101226236", "20250514", "20250514", 100, 1, 2, 2))
-	t.Log(res, err)
-}
-
 func TestIssueTaxInvoiceEx(t *testing.T) {
 	c := NewClient(os.Getenv(envCertKey), os.Getenv(envCorpNum))
 	res, err := c.IssueTaxInvoiceEx(IssueTaxInvoiceEx{
