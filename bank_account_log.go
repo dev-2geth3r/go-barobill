@@ -86,6 +86,7 @@ func (c *Client) GetPeriodBankAccountLogEx2(bal GetPeriodBankAccountLogEx2) (res
 		Post(bankAccountEndpoint)
 	if resp != nil && resp.IsErrorState() && err == nil {
 		err = errors.New(resp.String())
+		return
 	}
 
 	if resp != nil && resp.Body != nil {
