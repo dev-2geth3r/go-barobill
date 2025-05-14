@@ -88,9 +88,11 @@ func (c *Client) GetPeriodBankAccountLogEx2(bal GetPeriodBankAccountLogEx2) (res
 		err = errors.New(resp.String())
 	}
 
-	if resp != nil {
+	if resp != nil && resp.Body != nil {
 		jsonBuffer, _ := xj.Convert(resp.Body)
 		json.Unmarshal([]byte(gjson.Parse(jsonBuffer.String()).Get("Envelope.Body.GetPeriodBankAccountLogEx2Response.GetPeriodBankAccountLogEx2Result").Raw), &res)
+	} else {
+		err = errors.New("internal server error from barobill")
 	}
 	return
 }
